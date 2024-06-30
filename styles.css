@@ -1,0 +1,52 @@
+/* styles.css */
+
+/* 浅色模式 */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #dfdfd1;
+        --text-color: #373d3f;
+        --link-color: #4b5c74;
+    }
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #303435;
+        --text-color: #f6f6f6;
+        --link-color: #c6d0e3;
+    }
+
+    img {
+        filter: brightness(0.8) contrast(1.2);
+    }
+}
+
+/* 默认模式 */
+@media (prefers-color-scheme: no-preference) {
+    :root {
+        --bg: #353c3e;
+        --text-color: #f6f6f6;
+        --link-color: #c6d0e3;
+    }
+
+    img {
+        filter: brightness(0.8) contrast(1.2);
+    }
+}
+
+/* 应用样式变量 */
+body {
+    background-color: var(--bg);
+    color: var(--text-color);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out; /* 添加过渡效果 */
+}
+
+a {
+    color: var(--link-color);
+    transition: color 0.5s ease-in-out; /* 添加过渡效果 */
+}
+
+img {
+    transition: filter 0.5s ease-in-out; /* 添加过渡效果 */
+}
